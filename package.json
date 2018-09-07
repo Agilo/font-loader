@@ -1,6 +1,6 @@
 {
   "name": "@agilo/font-loader",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "",
   "main": "dist/font-loader.es.js",
   "browser": "dist/font-loader.min.js",
