@@ -1,6 +1,6 @@
 {
   "name": "@agilo/font-loader",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "",
   "main": "dist/font-loader.es.js",
   "browser": "dist/font-loader.min.js",
@@ -13,7 +13,7 @@
     "url": "git+https://github.com/Agilo/font-loader.git"
   },
   "author": "",
-  "license": "GNU General Public License v2.0",
+  "license": "GPL-2.0-only",
   "bugs": {
     "url": "https://github.com/Agilo/font-loader/issues"
   },
