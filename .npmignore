@@ -1,0 +1,3 @@
+# NPM already handles all files related to it
+# like (node_modules/, npm-debug.log, ...)
+# dist/ is ignored in GIT repo but not in NPM package

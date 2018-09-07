@@ -1,0 +1,31 @@
+{
+  "name": "@agilo/font-loader",
+  "version": "0.1.0",
+  "description": "",
+  "main": "dist/font-loader.es.js",
+  "browser": "dist/font-loader.min.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node ./scripts/build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Agilo/font-loader.git"
+  },
+  "author": "",
+  "license": "GNU General Public License v2.0",
+  "bugs": {
+    "url": "https://github.com/Agilo/font-loader/issues"
+  },
+  "homepage": "https://github.com/Agilo/font-loader#readme",
+  "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "core-js": "^2.5.7",
+    "fs-extra": "^7.0.0",
+    "rollup": "^0.65.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "terser": "^3.8.2"
+  }
+}
