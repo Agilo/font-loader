@@ -2,6 +2,7 @@ const path = require( 'path' );
 const fs = require( 'fs-extra' );
 const rollup = require( 'rollup' );
 const babel = require( 'rollup-plugin-babel' );
+const commonjs = require( 'rollup-plugin-commonjs' );
 const nodeResolve = require( 'rollup-plugin-node-resolve' );
 const { minify } = require( 'terser' );
 
@@ -66,6 +67,10 @@ const inputOptions = {
 	input: path.resolve( __dirname, '../src/index.js' ),
 };
 
+const polyfilledInputOptions = {
+	input: path.resolve( __dirname, '../src/index.polyfill.js' ),
+};
+
 async function esBuild() {
 	const outputOptions = {
 		file: path.resolve( __dirname, '../dist/font-loader.es.js' ),
@@ -112,7 +117,7 @@ async function iifeBuild() {
 
 	const bundle = await rollup.rollup( Object.assign(
 		{},
-		inputOptions,
+		polyfilledInputOptions,
 		{
 			plugins: [
 				nodeResolve( {
@@ -126,13 +131,16 @@ async function iifeBuild() {
 						moduleDirectory: 'node_modules',
 					},
 				} ),
+				commonjs( {
+					include: 'node_modules/**',
+				} ),
 				babel( {
 					presets: [
 						[
 							'@babel/preset-env',
 							{
 								modules: false,
-								useBuiltIns: 'usage',
+								useBuiltIns: 'entry',
 								ignoreBrowserslistConfig: true,
 								targets: 'last 2 versions, > 1%, ie >= 9',
 							}
@@ -156,7 +164,7 @@ async function iifeMinBuild() {
 
 	const bundle = await rollup.rollup( Object.assign(
 		{},
-		inputOptions,
+		polyfilledInputOptions,
 		{
 			plugins: [
 				nodeResolve( {
@@ -170,13 +178,16 @@ async function iifeMinBuild() {
 						moduleDirectory: 'node_modules',
 					},
 				} ),
+				commonjs( {
+					include: 'node_modules/**',
+				} ),
 				babel( {
 					presets: [
 						[
 							'@babel/preset-env',
 							{
 								modules: false,
-								useBuiltIns: 'usage',
+								useBuiltIns: 'entry',
 								ignoreBrowserslistConfig: true,
 								targets: 'last 2 versions, > 1%, ie >= 9',
 							}

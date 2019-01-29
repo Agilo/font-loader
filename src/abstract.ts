@@ -1,8 +1,16 @@
 import now from './utilities/now';
 
-const AbstractFont = function() {
-	return this;
-};
+interface FontOptions {
+	fontFamily: string,
+	fontWeight: number,
+}
+
+abstract class AbstractFont {
+	protected _isLoaded: boolean = false;
+	constructor (options) {
+
+	}
+}
 
 AbstractFont.prototype._isLoaded = false;
 AbstractFont.prototype.defaults = {
