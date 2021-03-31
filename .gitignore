@@ -1,6 +1,5 @@
 .DS_Store
-._*
-.npmrc
-node_modules/
+node_modules
+dist
 npm-debug.log
-dist/
+.npmrc
