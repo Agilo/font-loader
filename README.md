@@ -25,7 +25,7 @@ const font = fontLoader( {
 
 font.load()
 	.then( () => console.log( 'FontFamily is loaded!' ) )
-	.catch( (error) => console.log( error ); );
+	.catch( (error) => console.error( error ); );
 ```
 
 ## License
